@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.RateLimiting;
 using System.Threading.RateLimiting;
 using Microsoft.AspNetCore.OData;
 using CleanArchitecture_2025.WebAPI.Controllers;
+using CleanArchitecture_2025.WebAPI.Modules;
+using CleanArchitecture_2025.WebAPI;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -32,7 +34,7 @@ builder.Services.AddRateLimiter(x =>
         cfg.QueueProcessingOrder = QueueProcessingOrder.OldestFirst;
     })
 );
-
+builder.Services.AddExceptionHandler<ExceptionHandler>().AddProblemDetails();
 var app = builder.Build();
 
 app.MapOpenApi();
@@ -41,6 +43,10 @@ app.MapScalarApiReference();
 app.MapDefaultEndpoints();
 
 app.UseCors(x => x.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod());
+
+app.RegisterRoutes();
+
+app.UseExceptionHandler();
 
 app.MapControllers().RequireRateLimiting("fixed");
 
