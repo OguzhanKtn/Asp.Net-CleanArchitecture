@@ -5,15 +5,18 @@ This is a simple project to demonstrate how to setup a project using Clean Archi
 ## Project Content
 
 ### Architectural Pattern
+
 - Clean Architecture
 
 ### Design Patterns
+
 - Result Pattern
 - Repository Pattern
 - CQRS Pattern
 - UnitOfWork Pattern
 
 ### Libraries
+
 - MediatR
 - FluentValidation
 - TS.Result
@@ -24,10 +27,8 @@ This is a simple project to demonstrate how to setup a project using Clean Archi
 - Scrutor
 
 ### Tools
+
 - Visual Studio 2022
 - SQL Server
 - OpenAPI
 - Scalar
-
-### Database
-- SQL Server
