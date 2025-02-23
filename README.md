@@ -19,6 +19,7 @@ This is a simple project to demonstrate how to setup a project using Clean Archi
 
 - MediatR
 - FluentValidation
+- Identity
 - TS.Result
 - TS.GenericRepository
 - Mapster
